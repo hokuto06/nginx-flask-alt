@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: ./flask_app
+    container_name: flask-app-alt
+    expose:
+      - "5000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-alt
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - flask-app
