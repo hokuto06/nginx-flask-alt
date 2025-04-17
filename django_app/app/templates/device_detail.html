@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Dispositivo</title>
+</head>
+<body>
+    <h1>Detalle del Dispositivo</h1>
+    {% if device %}
+        <p><strong>MAC Address:</strong> {{ device.ap_mac }}</p>
+        <p><strong>IP:</strong> {{ device.device_ip }}</p>
+        <p><strong>Clientes en 2.4GHz:</strong> {{ device.clients_2g }}</p>
+        <p><strong>Clientes en 5GHz:</strong> {{ device.clients_5g }}</p>
+    {% else %}
+        <p>Dispositivo no encontrado.</p>
+    {% endif %}
+    <a href="{% url 'devices_list' %}">Volver a la lista</a>
+</body>
+</html>
