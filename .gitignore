@@ -10,5 +10,6 @@ __pycache__/
 .idea/
 .docker/
 *.swp
+default.dev.conf
 docker-compose.override.yml
 flask_app/Dockerfile.dev
